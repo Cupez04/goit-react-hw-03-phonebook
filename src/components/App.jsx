@@ -6,7 +6,7 @@ import ContactList from './ContactList/ContactList';
 import ContactForm from './ContactForm';
 import Filter from './Filter';
 import Notification from './Notification/Notification';
-import Notiflix, { Notify } from 'notiflix';
+import Notiflix from 'notiflix';
 
 export default class App extends Component {
   state = {
@@ -25,7 +25,7 @@ export default class App extends Component {
     let isAdded = false;
     this.state.contacts.forEach(el => {
       if (el.name.toLowerCase() === normalizedName) {
-        Notify.warning(`${name} is already in contacts \u{1F615}`);
+        Notiflix.Notify.warning(`${name} is already in contacts \u{1F615}`);
         isAdded = true;
       }
     });
